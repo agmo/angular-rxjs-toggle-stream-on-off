@@ -1,6 +1,11 @@
 # AngularRxjsToggleStreamOnOff
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11. 
+
+This is an example of how to pause an RxJS stream (toggle a stream on/off).
+
+Based on: 
+https://egghead.io/lessons/rxjs-toggle-a-stream-on-and-off-with-rxjs
 
 ## Development server
 
