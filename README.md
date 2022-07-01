@@ -7,6 +7,10 @@ This is an example of how to pause an RxJS stream (toggle a stream on/off).
 Based on: 
 https://egghead.io/lessons/rxjs-toggle-a-stream-on-and-off-with-rxjs
 
+## Demo
+
+https://agmo.github.io/angular-rxjs-toggle-stream-on-off/
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
