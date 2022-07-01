@@ -1,7 +1,6 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import { fromEvent, interval, Observable } from 'rxjs';
-import { FromEventTarget } from 'rxjs/internal/observable/fromEvent';
 
 @Component({
   selector: 'app-root',
@@ -9,23 +8,21 @@ import { FromEventTarget } from 'rxjs/internal/observable/fromEvent';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
-  @ViewChild('input') input: { nativeElement: FromEventTarget<unknown>; };
+  @ViewChild('input') input: ElementRef | undefined;
 
-  checked: Observable<any>;
+  checked: Observable<any> | undefined;
   count = 0;
-  source: Observable<number>;
+  source: Observable<number> = interval(100);
 
   ngAfterViewInit(): void {
-    this.source = interval(100);
-
-    this.checked = fromEvent(this.input.nativeElement, 'change').pipe(
+    this.checked = fromEvent(this.input!.nativeElement, 'change').pipe(
       map((e: any) => e.target.checked)
     );
 
     this.checked.pipe(
       filter(isChecked => !!isChecked),
       switchMap(() => this.source.pipe(
-        takeUntil(this.checked))
+        takeUntil(this.checked!))
       )
     ).subscribe((count: number) => this.count = count);
   }
