@@ -1,0 +1,8 @@
+<div class="container">
+  <div>
+    <label for="toggle">Check/uncheck to start & stop fetching new jokes</label>
+    <input #input type="checkbox" id="toggle">
+  </div>
+
+  <p *ngIf="joke$ | async as joke">{{joke.value}}</p>
+</div>

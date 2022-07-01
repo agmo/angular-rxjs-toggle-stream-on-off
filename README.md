@@ -5,7 +5,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 This is an example of how to pause an RxJS stream (toggle a stream on/off).
 
 Based on: 
-https://egghead.io/lessons/rxjs-toggle-a-stream-on-and-off-with-rxjs
+
+- https://egghead.io/lessons/rxjs-toggle-a-stream-on-and-off-with-rxjs (method 1)
+- https://kddsky.medium.com/pauseable-observables-in-rxjs-58ce2b8c7dfd (method 2)
 
 ## Demo
 
